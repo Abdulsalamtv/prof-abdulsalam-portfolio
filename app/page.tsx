@@ -1,287 +1,437 @@
 "use client";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
 import {
   ArrowDownRight,
-  ArrowRight,
   ArrowUpRight,
+  ArrowRight,
   BadgeCheck,
-  Blocks,
-  BrainCircuit,
   BriefcaseBusiness,
-  ChartNoAxesCombined,
-  CircleDot,
   ExternalLink,
+  Globe,
   MessageCircle,
-  Send,
-  Users,
-  Eye,
-  Bookmark,
-  Trophy,
   Sparkles,
-  Terminal
+  TrendingUp,
+  Users,
+  Zap,
 } from "lucide-react";
 
 const projects = [
   {
-    tag: "STABLECOINS · RWA · DEFI",
-    title: "STBL",
+    name: "STBL",
+    category: "STABLECOINS · RWA",
     description:
-      "Content and ecosystem storytelling around stablecoins, real-world assets, and on-chain finance.",
-    role: "Content & community contribution",
-    color: "blue",
-    href: "https://x.com/stbl_official"
+      "Creating educational content around stablecoins, real-world assets, and the next generation of onchain finance.",
+    tag: "AMBASSADOR",
+    url: "https://x.com/stbl_official/status/2084612774274257050",
+    number: "01",
   },
   {
-    tag: "CREATOR CAMPAIGN",
-    title: "RebateLaunch",
+    name: "RebateLaunch",
+    category: "TOKEN LAUNCHES",
     description:
-      "Explainers focused on holder rewards, launch mechanics, and how the product works for everyday users.",
-    role: "Web3 content",
-    color: "violet",
-    href: "https://x.com/RebateLaunch"
+      "Breaking down holder rewards, launch mechanics, and how communities can participate in token launches.",
+    tag: "CONTENT CREATION",
+    url: "https://x.com/search?q=%40RebateLaunch&src=typed_query",
+    number: "02",
   },
   {
-    tag: "WEB3 GAMING",
-    title: "1win",
+    name: "1win",
+    category: "WEB3 · ENTERTAINMENT",
     description:
-      "Campaign content built around platform activity, creator participation, and clear calls to action.",
-    role: "Campaign content",
-    color: "cyan",
-    href: "https://x.com/1win"
-  }
+      "Creating engaging campaign content that connects platform features with the crypto community.",
+    tag: "CAMPAIGN CONTENT",
+    url: "https://x.com/search?q=%401win&src=typed_query",
+    number: "03",
+  },
+  {
+    name: "NewSight",
+    category: "WEB3 COMMUNITY",
+    description:
+      "Contributing to project visibility and community awareness through ambassador content.",
+    tag: "AMBASSADOR",
+    url: "https://x.com/NewSightHQ/status/2092991818531291348",
+    number: "04",
+  },
 ];
 
-const services = [
-  {
-    icon: <MessageCircle size={20} />,
-    title: "X content & threads",
-    text: "Clear, natural posts and explainers that make a project's value easier to understand."
-  },
-  {
-    icon: <ChartNoAxesCombined size={20} />,
-    title: "KOL campaigns",
-    text: "Creator partnerships, campaign deliverables, and content tailored to the project's goals."
-  },
-  {
-    icon: <Blocks size={20} />,
-    title: "Community growth",
-    text: "Community engagement, onboarding support, and consistent communication."
-  },
-  {
-    icon: <BrainCircuit size={20} />,
-    title: "Research & storytelling",
-    text: "Product research and practical narratives that help audiences understand what is being built."
-  }
+const metrics = [
+  { value: "544.7K", label: "IMPRESSIONS", icon: TrendingUp },
+  { value: "17K", label: "ENGAGEMENTS", icon: Zap },
+  { value: "24.5K", label: "PROFILE VISITS", icon: Users },
+  { value: "5,000", label: "VERIFIED FOLLOWERS", icon: BadgeCheck },
 ];
 
 export default function Home() {
   return (
-    <main>
-      <div className="ambient ambient-one" />
-      <div className="ambient ambient-two" />
-      <nav className="nav shell">
-        <a href="#home" className="brand" aria-label="Prof Abdulsalam home">
-          <span className="brand-mark">P<span>.</span></span>
-          <span>Prof_Abdulsalam</span>
-        </a>
-        <div className="nav-links">
-          <a href="#work">Work</a>
-          <a href="#achievements">Results</a>
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-        </div>
-        <a className="nav-cta" href="#contact">Let&apos;s talk <ArrowUpRight size={15} /></a>
-      </nav>
+    <main className="min-h-screen overflow-hidden bg-[#05070c] text-white">
+      <div className="pointer-events-none fixed inset-0 z-0">
+        <div className="absolute -top-40 left-1/3 h-[420px] w-[420px] rounded-full bg-blue-600/10 blur-[130px]" />
+        <div className="absolute top-[650px] -right-40 h-[350px] w-[350px] rounded-full bg-indigo-600/10 blur-[120px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-[size:55px_55px]" />
+      </div>
 
-      <section className="hero shell" id="home">
-        <motion.div
-          className="hero-copy"
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65 }}
-        >
-          <div className="availability"><span className="status-dot" /> OPEN TO SELECT PARTNERSHIPS</div>
-          <p className="eyebrow">WEB3 CREATOR <span>·</span> RESEARCHER <span>·</span> COMMUNITY BUILDER</p>
-          <h1>Making Web3<br />make <span className="gradient-text">sense.</span></h1>
-          <p className="hero-description">
-            I turn complex crypto products and ideas into clear content people can understand,
-            care about, and act on.
-          </p>
-          <div className="hero-actions">
-            <a className="button button-primary" href="#work">Explore my work <ArrowRight size={17} /></a>
-            <a className="button button-secondary" href="#contact">Work with me <ArrowUpRight size={16} /></a>
-          </div>
-          <div className="hero-proof">
-            <div className="proof-icon"><Sparkles size={17} /></div>
-            <p><strong>Content with a purpose.</strong><br /><span>Useful stories. Clear ideas. Real community.</span></p>
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="hero-visual"
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.12 }}
-        >
-          <div className="orbit orbit-one" />
-          <div className="orbit orbit-two" />
-          <div className="profile-card">
-            <div className="card-top"><span className="live-label"><span className="status-dot" /> DIGITAL IDENTITY</span><span className="card-code">PA / 001</span></div>
-            <div className="avatar-frame">
-              <Image src="/avatar.jpg" alt="Prof_Abdulsalam profile avatar" width={420} height={420} priority />
-              <div className="avatar-shine" />
+      <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
+        <header className="flex items-center justify-between border-b border-white/[0.08] py-5">
+          <a href="#" className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-400/30 bg-blue-500/10 font-black text-blue-300">
+              P.
             </div>
-            <div className="profile-bottom">
-              <div><p className="profile-label">CREATOR PROFILE</p><h2>Prof_Abdulsalam</h2></div>
-              <span className="verified"><BadgeCheck size={20} /></span>
+            <div>
+              <p className="text-sm font-bold tracking-wide">
+                PROF_ABDULSALAM
+              </p>
+              <p className="text-[10px] tracking-[0.22em] text-gray-500">
+                WEB3 CREATOR
+              </p>
             </div>
-            <div className="profile-tags"><span>WEB3</span><span>CONTENT</span><span>COMMUNITY</span></div>
+          </a>
+
+          <a
+            href="#contact"
+            className="rounded-full border border-white/15 px-4 py-2.5 text-xs font-semibold transition hover:border-blue-400 hover:bg-blue-500/10"
+          >
+            Let&apos;s work together ↗
+          </a>
+        </header>
+
+        <section className="grid min-h-[620px] items-center gap-12 py-16 md:grid-cols-[1.15fr_0.85fr] md:py-24">
+          <div>
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-400/[0.07] px-4 py-2 text-xs text-blue-300">
+              <span className="h-2 w-2 rounded-full bg-blue-400" />
+              WEB3 CONTENT CREATOR & COMMUNITY BUILDER
+            </div>
+
+            <h1 className="max-w-3xl text-5xl font-black leading-[1.04] tracking-[-0.055em] sm:text-7xl lg:text-[82px]">
+              Turning
+              <br />
+              attention into
+              <br />
+              <span className="bg-gradient-to-r from-blue-300 via-blue-500 to-indigo-400 bg-clip-text text-transparent">
+                impact.
+              </span>
+            </h1>
+
+            <p className="mt-7 max-w-xl text-base leading-8 text-gray-400 sm:text-lg">
+              I help Web3 projects tell better stories, reach the right
+              communities, and turn complex ideas into content people
+              actually want to read.
+            </p>
+
+            <div className="mt-9 flex flex-wrap gap-3">
+              <a
+                href="#work"
+                className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-4 text-sm font-bold transition hover:bg-blue-500"
+              >
+                Explore my work <ArrowDownRight size={17} />
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-6 py-4 text-sm font-semibold transition hover:border-blue-400/60"
+              >
+                Hire me <ArrowUpRight size={17} />
+              </a>
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-gray-500">
+              <span className="flex items-center gap-2">
+                <Globe size={15} className="text-blue-400" />
+                Web3 & Crypto
+              </span>
+              <span className="flex items-center gap-2">
+                <Users size={15} className="text-blue-400" />
+                Community Growth
+              </span>
+              <span className="flex items-center gap-2">
+                <Sparkles size={15} className="text-blue-400" />
+                Campaign Content
+              </span>
+            </div>
           </div>
-          <div className="float-chip chip-top"><span className="chip-icon"><Terminal size={16} /></span><span><b>Research</b><small>Understand the product</small></span></div>
-          <div className="float-chip chip-bottom"><span className="chip-icon"><CircleDot size={16} /></span><span><b>Storytelling</b><small>Make the message land</small></span></div>
-          <div className="hero-grid" />
-        </motion.div>
-      </section>
 
-      <section className="ticker-wrap" aria-label="Areas of work">
-        <div className="ticker">
-          {["WEB3 CONTENT", "PROJECT RESEARCH", "KOL PARTNERSHIPS", "COMMUNITY BUILDING", "ECOSYSTEM STORYTELLING", "WEB3 CONTENT", "PROJECT RESEARCH", "KOL PARTNERSHIPS"].map((item, i) => (
-            <span key={`${item}-${i}`}>{item}<i>✳</i></span>
-          ))}
-        </div>
-      </section>
+          <div className="relative mx-auto w-full max-w-[400px]">
+            <div className="absolute inset-8 rounded-full bg-blue-600/20 blur-[90px]" />
 
-      <section className="section shell" id="work">
-        <div className="section-heading">
-          <div><p className="eyebrow">SELECTED EXPERIENCE</p><h2>Work that tells<br />a bigger story<span className="blue-dot">.</span></h2></div>
-          <p className="section-intro">A selection of Web3 projects and content themes. Open a project to explore its public presence and related work.</p>
-        </div>
-        <div className="project-grid">
-          {projects.map((project, i) => (
-            <motion.a
-              className={`project-card ${project.color}`}
-              href={project.href}
+            <div className="relative rounded-[30px] border border-white/10 bg-[#0b101b] p-3 shadow-2xl shadow-blue-950/30">
+              <div className="absolute -right-3 top-12 z-20 rounded-xl border border-blue-400/20 bg-[#101a2c] px-4 py-3 shadow-xl sm:-right-8">
+                <p className="text-[10px] tracking-widest text-gray-500">
+                  CONTENT REACH
+                </p>
+                <p className="mt-1 text-xl font-bold text-blue-300">
+                  544.7K+
+                </p>
+              </div>
+
+              <div className="absolute -left-3 bottom-16 z-20 rounded-xl border border-white/10 bg-[#101521] px-4 py-3 shadow-xl sm:-left-8">
+                <p className="text-[10px] tracking-widest text-gray-500">
+                  FOCUS
+                </p>
+                <p className="mt-1 text-sm font-bold">Web3 Growth ↗</p>
+              </div>
+
+              <div className="overflow-hidden rounded-[23px] border border-white/5 bg-gradient-to-b from-[#111d34] to-[#080b12]">
+                <div className="flex items-center justify-between px-5 py-4">
+                  <span className="text-xs font-semibold text-gray-300">
+                    CREATOR PROFILE
+                  </span>
+                  <span className="text-xs text-blue-300">01 / 01</span>
+                </div>
+
+                <div className="px-5 pb-5 pt-3">
+                  <div className="relative overflow-hidden rounded-2xl border border-blue-400/20 bg-[#0c1424]">
+                    <img
+                      src="/avatar.jpg"
+                      alt="Prof Abdulsalam avatar"
+                      className="h-[330px] w-full object-cover object-center"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#05070c] via-[#05070c]/60 to-transparent p-5 pt-20">
+                      <p className="text-2xl font-black tracking-tight">
+                        Prof_Abdulsalam
+                      </p>
+                      <p className="mt-1 text-sm text-gray-300">
+                        Crypto storyteller. Community builder.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 grid grid-cols-2 gap-3">
+                    <div className="rounded-xl border border-white/[0.07] bg-white/[0.025] p-3">
+                      <p className="text-[10px] tracking-widest text-gray-500">
+                        SPECIALTY
+                      </p>
+                      <p className="mt-2 text-sm font-semibold">
+                        Web3 Campaigns
+                      </p>
+                    </div>
+                    <div className="rounded-xl border border-white/[0.07] bg-white/[0.025] p-3">
+                      <p className="text-[10px] tracking-widest text-gray-500">
+                        AVAILABLE FOR
+                      </p>
+                      <p className="mt-2 text-sm font-semibold">
+                        Partnerships
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-white/[0.08] py-8">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+            <p className="text-xs font-semibold tracking-[0.2em] text-gray-500">
+              SOCIAL PERFORMANCE
+            </p>
+            <p className="text-xs text-gray-600">
+              Based on supplied analytics
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+            {metrics.map((metric) => {
+              const Icon = metric.icon;
+              return (
+                <div
+                  key={metric.label}
+                  className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5 transition hover:border-blue-400/30 hover:bg-blue-500/[0.04] sm:p-6"
+                >
+                  <Icon size={19} className="mb-5 text-blue-400" />
+                  <p className="text-2xl font-black tracking-tight sm:text-3xl">
+                    {metric.value}
+                  </p>
+                  <p className="mt-2 text-[9px] font-semibold tracking-[0.13em] text-gray-500 sm:text-[10px]">
+                    {metric.label}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        <section id="work" className="scroll-mt-10 py-24">
+          <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
+            <div>
+              <p className="mb-4 text-xs font-bold tracking-[0.25em] text-blue-400">
+                SELECTED EXPERIENCE
+              </p>
+              <h2 className="text-4xl font-black tracking-tight sm:text-5xl">
+                Work that speaks.
+              </h2>
+              <p className="mt-4 max-w-xl leading-7 text-gray-400">
+                Campaigns, communities, and stories across the Web3
+                ecosystem.
+              </p>
+            </div>
+
+            <a
+              href="https://x.com/Prof_Abdulsalam"
               target="_blank"
               rel="noreferrer"
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.45, delay: i * 0.08 }}
+              className="inline-flex items-center gap-2 text-sm text-blue-300 transition hover:text-white"
             >
-              <div className="project-card-top"><span className="project-index">0{i + 1}</span><span className="project-arrow"><ArrowUpRight size={18} /></span></div>
-              <p className="project-tag">{project.tag}</p>
-              <h3>{project.title}</h3>
-              <p className="project-description">{project.description}</p>
-              <div className="project-card-bottom"><span>{project.role}</span><ExternalLink size={15} /></div>
-            </motion.a>
-          ))}
-        </div>
-        <p className="note"><CircleDot size={13} /> Portfolio examples are a starting point. Add direct links to specific posts and confirm each role before publishing.</p>
-      </section>
+              More on X <ExternalLink size={15} />
+            </a>
+          </div>
 
+          <div className="grid gap-4 md:grid-cols-2">
+            {projects.map((project) => (
+              <a
+                key={project.name}
+                href={project.url}
+                target="_blank"
+                rel="noreferrer"
+                className="group rounded-2xl border border-white/[0.09] bg-gradient-to-br from-white/[0.045] to-transparent p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-400/40 hover:bg-blue-500/[0.04] sm:p-8"
+              >
+                <div className="mb-8 flex items-center justify-between">
+                  <span className="text-xs font-bold tracking-[0.2em] text-blue-400">
+                    {project.number} / 04
+                  </span>
+                  <ArrowUpRight
+                    size={20}
+                    className="text-gray-500 transition group-hover:text-blue-300"
+                  />
+                </div>
 
-      <section className="section shell achievements-section" id="achievements">
-        <div className="section-heading">
-          <div><p className="eyebrow">PROOF, NOT JUST PROMISES</p><h2>Community work.<br />Measurable reach<span className="blue-dot">.</span></h2></div>
-          <p className="section-intro">Selected milestones from ambassador programs, referral campaigns, and content performance. Metrics reflect the supplied screenshots and should be refreshed as results change.</p>
-        </div>
-        <div className="metrics-grid">
-          <div className="metric-card"><span className="metric-icon"><Eye size={18} /></span><p>Impressions</p><strong>544.7K</strong><small>4-week X analytics snapshot</small></div>
-          <div className="metric-card"><span className="metric-icon"><ChartNoAxesCombined size={18} /></span><p>Engagements</p><strong>17K</strong><small>4-week X analytics snapshot</small></div>
-          <div className="metric-card"><span className="metric-icon"><Users size={18} /></span><p>Profile visits</p><strong>24.5K</strong><small>4-week X analytics snapshot</small></div>
-          <div className="metric-card"><span className="metric-icon"><Bookmark size={18} /></span><p>Verified followers</p><strong>5.0K</strong><small>Shown in supplied analytics</small></div>
-        </div>
-        <div className="achievement-grid">
-          <a className="achievement-card" href="https://x.com/stbl_official/status/2084612774274257050" target="_blank" rel="noreferrer">
-            <div className="achievement-top"><span className="achievement-symbol"><Trophy size={19} /></span><span className="achievement-label">AMBASSADOR RECOGNITION</span><ArrowUpRight size={16} /></div>
-            <h3>STBL</h3><p>Recognized for contributions to the STBL ecosystem. Open the official post to see the public announcement.</p>
-            <span className="achievement-link">View STBL recognition <ArrowRight size={14} /></span>
-          </a>
-          <a className="achievement-card" href="https://x.com/NewSightHQ/status/2092991818531291348" target="_blank" rel="noreferrer">
-            <div className="achievement-top"><span className="achievement-symbol"><BadgeCheck size={19} /></span><span className="achievement-label">AMBASSADOR PROGRAM</span><ArrowUpRight size={16} /></div>
-            <h3>NewSight</h3><p>NewSight ambassador experience, with the announcement linked for visitors to verify the details.</p>
-            <span className="achievement-link">View NewSight post <ArrowRight size={14} /></span>
-          </a>
-          <div className="achievement-card">
-            <div className="achievement-top"><span className="achievement-symbol"><Users size={19} /></span><span className="achievement-label">REFERRAL GROWTH</span></div>
-            <h3>Coinvid</h3><p>Referred 590+ people to the Coinvid trading platform, according to the supplied invitation dashboard.</p>
-            <div className="proof-image"><img src="/proof/coinvid-invitation.jpg" alt="Coinvid invitation dashboard showing referral totals" /></div>
-          </div>
-          <div className="achievement-card">
-            <div className="achievement-top"><span className="achievement-symbol"><Users size={19} /></span><span className="achievement-label">TRADING BOT AMBASSADOR</span></div>
-            <h3>Blum</h3><p>Referred 600+ people as a Blum trading bot ambassador, based on the figures provided.</p>
-            <p className="proof-disclaimer">Add a public proof link or dashboard screenshot before publishing this claim.</p>
-          </div>
-        </div>
-        <div className="analytics-proof">
-          <div className="analytics-copy"><p className="eyebrow">CONTENT PERFORMANCE</p><h3>Reach is useful.<br /><span className="gradient-text">Proof makes it credible.</span></h3><p>Selected X analytics supplied for this portfolio. Keep this snapshot current and share the original analytics view with prospective partners when needed.</p></div>
-          <a className="analytics-image-link" href="/proof/x-analytics.png" target="_blank" rel="noreferrer" aria-label="Open full X analytics screenshot">
-            <img src="/proof/x-analytics.png" alt="X analytics screenshot showing impressions, engagements, profile visits and other four-week metrics" />
-            <span>Open analytics screenshot <ArrowUpRight size={14} /></span>
-          </a>
-        </div>
-        <div className="content-links">
-          <div><p className="eyebrow">SELECTED CONTENT</p><h3>Some work worth a look<span className="blue-dot">.</span></h3></div>
-          <div className="content-link-list">
-            <a href="https://x.com/Prof_Abdulsalam/status/2077126963009896513" target="_blank" rel="noreferrer"><span><small>FEATURED POST 01</small><b>Web3 content by Prof_Abdulsalam</b></span><ArrowUpRight size={17} /></a>
-            <a href="https://x.com/i/status/2111320447895678980" target="_blank" rel="noreferrer"><span><small>FEATURED POST 02</small><b>Selected content / campaign post</b></span><ArrowUpRight size={17} /></a>
-            <a href="https://x.com/Prof_Abdulsalam/status/2111380087979348069" target="_blank" rel="noreferrer"><span><small>FEATURED POST 03</small><b>Selected content / campaign post</b></span><ArrowUpRight size={17} /></a>
-          </div>
-        </div>
-      </section>
+                <p className="text-[10px] font-semibold tracking-[0.2em] text-gray-500">
+                  {project.category}
+                </p>
+                <h3 className="mt-3 text-3xl font-bold tracking-tight">
+                  {project.name}
+                </h3>
+                <p className="mt-4 min-h-[72px] max-w-lg text-sm leading-7 text-gray-400">
+                  {project.description}
+                </p>
 
-      <section className="services-section" id="services">
-        <div className="shell section">
-          <div className="section-heading">
-            <div><p className="eyebrow">HOW I CAN HELP</p><h2>Good projects deserve<br />clear communication<span className="blue-dot">.</span></h2></div>
-            <p className="section-intro">From the first explanation to the campaign rollout, I help make your product easier to discover and understand.</p>
-          </div>
-          <div className="services-grid">
-            {services.map((service, i) => (
-              <motion.div className="service-item" key={service.title} initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}>
-                <div className="service-icon">{service.icon}</div>
-                <h3>{service.title}</h3>
-                <p>{service.text}</p>
-                <span className="service-line" />
-              </motion.div>
+                <div className="mt-7 flex items-center justify-between border-t border-white/[0.08] pt-5">
+                  <span className="rounded-full border border-blue-400/20 bg-blue-400/[0.07] px-3 py-1.5 text-[9px] font-bold tracking-widest text-blue-300">
+                    {project.tag}
+                  </span>
+                  <span className="flex items-center gap-2 text-xs text-gray-400 group-hover:text-white">
+                    View details <ArrowRight size={14} />
+                  </span>
+                </div>
+              </a>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="section shell about-section" id="about">
-        <div className="about-symbol"><span>PA</span><div className="symbol-ring" /><div className="symbol-ring ring-two" /></div>
-        <div className="about-copy">
-          <p className="eyebrow">A LITTLE ABOUT ME</p>
-          <h2>Curiosity first.<br /><span className="gradient-text">Clarity always.</span></h2>
-          <p>I work at the intersection of Web3 content, research, and community. My focus is on explaining what projects are building in a way that feels human, useful, and grounded in the product.</p>
-          <p>This portfolio is a living record of the work, ideas, and collaborations behind the Prof_Abdulsalam brand.</p>
-          <a className="text-link" href="https://x.com/Prof_Abdulsalam" target="_blank" rel="noreferrer">Follow my work on X <ArrowUpRight size={16} /></a>
-        </div>
-      </section>
+        <section className="pb-24">
+          <div className="grid gap-5 lg:grid-cols-2">
+            <a
+              href="/x-analytics.png"
+              target="_blank"
+              rel="noreferrer"
+              className="group overflow-hidden rounded-2xl border border-white/10 bg-[#0b101b] transition hover:border-blue-400/40"
+            >
+              <div className="flex items-center justify-between p-5 sm:p-6">
+                <div>
+                  <p className="text-xs tracking-widest text-gray-500">
+                    SOCIAL PROOF
+                  </p>
+                  <h3 className="mt-2 text-xl font-bold">
+                    X Analytics
+                  </h3>
+                </div>
+                <ExternalLink
+                  size={18}
+                  className="text-gray-500 group-hover:text-blue-300"
+                />
+              </div>
+              <img
+                src="/x-analytics.png"
+                alt="X analytics proof"
+                className="max-h-[330px] w-full object-cover object-top"
+              />
+            </a>
 
-      <section className="contact-section" id="contact">
-        <div className="contact-glow" />
-        <div className="shell contact-content">
-          <p className="eyebrow">HAVE A PROJECT IN MIND?</p>
-          <h2>Let&apos;s make your<br /><span className="gradient-text">next move count.</span></h2>
-          <p className="contact-description">Looking for a Web3 creator for a campaign, a clear product story, or a community-focused collaboration? Let&apos;s talk.</p>
-          <div className="contact-actions">
-            <a className="button button-primary" href="https://t.me/Prof_Abdulsalam" target="_blank" rel="noreferrer">Contact on Telegram <Send size={16} /></a>
-            <a className="button button-secondary" href="https://x.com/Prof_Abdulsalam" target="_blank" rel="noreferrer">DM me on X <ArrowUpRight size={16} /></a>
+            <a
+              href="/coinvid-invitation.jpg"
+              target="_blank"
+              rel="noreferrer"
+              className="group overflow-hidden rounded-2xl border border-white/10 bg-[#0b101b] transition hover:border-blue-400/40"
+            >
+              <div className="flex items-center justify-between p-5 sm:p-6">
+                <div>
+                  <p className="text-xs tracking-widest text-gray-500">
+                    COMMUNITY RESULTS
+                  </p>
+                  <h3 className="mt-2 text-xl font-bold">
+                    Referral Experience
+                  </h3>
+                </div>
+                <ExternalLink
+                  size={18}
+                  className="text-gray-500 group-hover:text-blue-300"
+                />
+              </div>
+              <img
+                src="/coinvid-invitation.jpg"
+                alt="Referral dashboard proof"
+                className="max-h-[330px] w-full object-contain p-3"
+              />
+            </a>
           </div>
-          <div className="contact-foot"><span><BriefcaseBusiness size={14} /> Paid campaigns · KOL partnerships · Ambassadorships</span><span>PROF_ABDULSALAM © 2026</span></div>
-        </div>
-      </section>
+        </section>
 
-      <footer className="footer shell">
-        <a href="#home" className="brand"><span className="brand-mark">P<span>.</span></span><span>Prof_Abdulsalam</span></a>
-        <p>Built for clarity. Designed for the on-chain world.</p>
-        <div className="footer-links"><a href="https://x.com/Prof_Abdulsalam" target="_blank" rel="noreferrer">X <ArrowUpRight size={13} /></a><a href="https://t.me/Prof_Abdulsalam" target="_blank" rel="noreferrer">Telegram <ArrowUpRight size={13} /></a></div>
-      </footer>
+        <section id="contact" className="scroll-mt-10 pb-20">
+          <div className="relative overflow-hidden rounded-[28px] border border-blue-400/20 bg-gradient-to-br from-[#10234a] via-[#0b1325] to-[#080b12] p-7 sm:p-12 lg:p-16">
+            <div className="pointer-events-none absolute -right-20 -top-32 h-80 w-80 rounded-full bg-blue-500/20 blur-[100px]" />
+
+            <div className="relative grid items-center gap-10 md:grid-cols-[1fr_auto]">
+              <div>
+                <p className="mb-4 text-xs font-bold tracking-[0.25em] text-blue-300">
+                  HAVE A CAMPAIGN IN MIND?
+                </p>
+                <h2 className="max-w-2xl text-4xl font-black leading-tight tracking-tight sm:text-6xl">
+                  Let&apos;s build something
+                  <span className="text-blue-300"> meaningful.</span>
+                </h2>
+                <p className="mt-5 max-w-xl leading-7 text-gray-400">
+                  Open to paid campaigns, ambassador programs, content
+                  partnerships, and long-term collaborations with Web3
+                  teams.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-3">
+                <a
+                  href="https://t.me/Prof_Abdulsalam"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-3 rounded-xl bg-blue-600 px-6 py-4 text-sm font-bold transition hover:bg-blue-500"
+                >
+                  <MessageCircle size={18} />
+                  Contact on Telegram
+                  <ArrowUpRight size={16} />
+                </a>
+
+                <a
+                  href="https://x.com/Prof_Abdulsalam"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-3 rounded-xl border border-white/15 px-6 py-4 text-sm font-semibold transition hover:border-blue-400/50"
+                >
+                  <BriefcaseBusiness size={17} />
+                  Connect on X
+                  <ArrowUpRight size={16} />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer className="flex flex-col justify-between gap-4 border-t border-white/[0.08] py-7 text-xs text-gray-500 sm:flex-row sm:items-center">
+          <p>© 2026 Prof_Abdulsalam. Built for the Web3 ecosystem.</p>
+          <a
+            href="https://x.com/Prof_Abdulsalam"
+            target="_blank"
+            rel="noreferrer"
+            className="transition hover:text-blue-300"
+          >
+            Follow @Prof_Abdulsalam ↗
+          </a>
+        </footer>
+      </div>
     </main>
   );
-    }
+      }
